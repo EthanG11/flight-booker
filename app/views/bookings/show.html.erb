@@ -1,0 +1,21 @@
+<%if@booking%>
+<h1>Your Booking: </h1>
+<div>departing: <%=@booking.flight.departure_airport.code%>
+</div>
+<div>arriving: <%=@booking.flight.arrival_airport.code%></div>
+<div>date: <%=@booking.flight.start_datetime%></div>
+<div><%=@test%></div>
+
+<h3>Passengers: </h3>
+<div><%@booking.passengers.each_with_index do |passenger,i|%></div>
+<h4>Passenger <%="#{i+1}"%></h4>
+<div>name: <%=passenger.name%></div>
+<div>email: <%=passenger.email%></div>
+
+<%end%>
+
+<div><%=link_to "create another booking", root_path%></div>
+
+
+<%end%>
+

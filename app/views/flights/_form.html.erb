@@ -1,0 +1,13 @@
+<%= form_with method: :get do |form| %>
+
+<%= select_tag("flight[start_datetime]",options_for_select(@start_date_time))%>
+<%=label(:departure_airport_id,"From")%>
+<%= select_tag("flight[departure_airport_id]",options_for_select(@airport_names))%>
+<%=label(:arrival_airport_id,"To")%>
+<%= select_tag("flight[arrival_airport_id]",options_for_select(@airport_names))%>
+<%=label(:number_of,"passengers")%>
+<%= select_tag("flight[number_of_passengers]",options_for_select(@passengers_possible))%>
+<%= form.submit "Search" %>
+
+<% end %>
+
